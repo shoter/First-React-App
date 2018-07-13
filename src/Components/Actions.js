@@ -1,22 +1,25 @@
 import React, { Component } from 'react';
+import PlayerActions from "../PlayerActions";
 
 function Button(props) {
     return (
-        <button type="button"> {props.name} </button>
+        <button onClick={props.onClick} type="button"> {props.name} </button>
     )
 }
 
 class Actions extends React.Component
 {
-    
+    onActionClick(action) {
+        this.props.onActionClick(action);
+    }
 
     render() {
         return (
             <div class="actions">
-                <Button name="Attack" />
-                <Button name="Pokemon" />
-                <Button name="Item" />
-                <Button name="Run" />
+                <Button onClick={this.onActionClick.bind(this, PlayerActions.Attack)} name="Attack" />
+                <Button onClick={this.onActionClick.bind(this, PlayerActions.Pokemon)} name="Pokemon" />
+                <Button onClick={this.onActionClick.bind(this, PlayerActions.Items)} name="Item" />
+                <Button onClick={this.onActionClick.bind(this, PlayerActions.Run)} name="Run" />
             </div>
 
         )
