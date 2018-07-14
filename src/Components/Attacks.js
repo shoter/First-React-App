@@ -22,7 +22,7 @@ class Attacks extends React.Component
     
 
         return (
-            <div class="attacks left">
+            <div className="attacks left">
                 {attacks}
             </div>
 

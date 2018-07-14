@@ -55,7 +55,7 @@ class BattleScreen extends React.Component {
 
     Bottom(props) {
         var player = this.game().player;
-        var left = <div class="left" />;
+        var left = <div className="left" />;
         switch(this.game().state)
         {
             case GameStates.POKEMON:
@@ -83,9 +83,9 @@ class BattleScreen extends React.Component {
         }
 
         return (
-            <div class="bottom">
+            <div className="bottom">
                 {left}
-                <div class="divider" />
+                <div className="divider" />
                 <Actions onActionClick={this.actionClicked} />
             </div>
         )
@@ -94,8 +94,8 @@ class BattleScreen extends React.Component {
     render() {
         var game = this.game();
         return (
-            <div class="battleScreen">
-                <div class="top">
+            <div className="battleScreen">
+                <div className="top">
                 <PokemonInfo pokemon={game.enemyPokemon} />
                 <PokemonInfo pokemon={game.playerPokemon} />
                 </div>

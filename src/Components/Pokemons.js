@@ -19,7 +19,7 @@ class Pokemons extends React.Component
         });
 
         return (
-            <div class="pokemons left">
+            <div className="pokemons left">
                 {pokemons}
             </div>
 

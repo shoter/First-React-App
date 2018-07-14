@@ -15,7 +15,7 @@ class Actions extends React.Component
 
     render() {
         return (
-            <div class="actions">
+            <div className="actions">
                 <Button onClick={this.onActionClick.bind(this, PlayerActions.Attack)} name="Attack" />
                 <Button onClick={this.onActionClick.bind(this, PlayerActions.Pokemon)} name="Pokemon" />
                 <Button onClick={this.onActionClick.bind(this, PlayerActions.Items)} name="Item" />

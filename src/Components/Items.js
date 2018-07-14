@@ -10,7 +10,7 @@ class Items extends React.Component
     render()
     {
         return (
-            <div class="items left" >
+            <div className="items left" >
                 <Button name="Item1"/>
                 <Button name="Item2"/>
             </div>

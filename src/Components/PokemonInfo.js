@@ -7,16 +7,16 @@ export default function PokemonInfo(props) {
         var hp = pok.getHp() / pok.getMaxHp();
 
     return (
-        <div class="pokemonInfo">
-            <div class="name">
+        <div className="pokemonInfo">
+            <div className="name">
                 {pok.getName()}
             </div>
-            <div class="bottom">
-                <div class="level">
+            <div className="bottom">
+                <div className="level">
                     :L {pok.getLevel()}
                 </div>
-                <div class="hitPoints">
-                    <div class="remaining" style={{ width: (hp * 100) + "%" }}> </div>
+                <div className="hitPoints">
+                    <div className="remaining" style={{ width: (hp * 100) + "%" }}> </div>
                 </div>
             </div>
         </div>
