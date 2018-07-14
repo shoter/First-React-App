@@ -1,31 +1,41 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import TestUtils from "react-dom/test-utils"
+import { shallow, configure } from "enzyme";
 import Message from "./Message";
+import Adapter from 'enzyme-adapter-react-16';
 
-describe("Message component", () => {
-var self = {};
-beforeEach(function() {
-    self.component = TestUtils.renderIntoDocument(<Message message="dupa" />);
-    self.selectDOM = () => ReactDOM.findDOMNode(self.component);
-    console.log("beforeEach");
-})
+configure({ adapter: new Adapter() });
 
-it('render smoke test', () => {
-    const div = document.createElement('div');
-    ReactDOM.render(<Message message="Dupa" />, div);
-    ReactDOM.unmountComponentAtNode(div);
+describe("Message component", function () {
+    var onClick = () => {};
+    var message = null;
+    var instance = () => message().instance();
+    const text = "dupa";
+
+    beforeEach(function() {
+        message = shallow(<Message message={text} onClick={self.onClick} />)
+    })
+
+    it('renders as div', function () {
+    expect(
+        message.is("div")
+    ).toBe(true)
   });
 
-it("renders a div", function() {
-    expect(self.selectDOM().tagName).toEqual("DIV");
-});
+  it("Has correct message", function() {
+      expect(
+          message.text()
+      ).toBe(text);
+  });
 
-it("Handles onClick event")
-{
+  if("Handles onClick", function() {
+      var clicked = false;
+      onClick = () => { clicked = true;};
 
-}
+      message.simulate("click");
 
+      expect(clicked).toBe(true);
+  });
 
   
 })

@@ -5,8 +5,8 @@ import Actions from "./Actions"
 import Pokemons from "./Pokemons";
 import GameStates from "../Game/GameStates";
 import PlayerActions from "../PlayerActions";
-import Message from "./Message"
-import Items from "./Items"
+import Message from "./Message";
+import Items from "./Items";
 class BattleScreen extends React.Component {
 
     constructor(props) {
